@@ -43,12 +43,68 @@
     "children": [
       "vtex.menu@2.x:menu#websites",
       "flex-layout.col#spacer",
+      "order-config#header",
       "vtex.menu@2.x:menu#institutional"
     ]
   },
   "flex-layout.col#spacer": {
     "props": {
       "width": "grow"
+    }
+  },
+  "order-config#header": {
+    "children": [
+      "order-config.title#header",
+      "order-config.modal#header"
+    ],
+    "props": {
+      "blockClass": "header",
+      "formFields": [
+        {
+          "name": "orderType",
+          "type": "string",
+          "fieldType": "radio",
+          "label": "Order Type",
+          "defaultValue": "resale",
+          "options": [
+            {
+              "label": "Resale",
+              "value": "resale"
+            },
+            {
+              "label": "Consumption",
+              "value": "consumption"
+            }
+          ]
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "fieldType": "select",
+          "label": "State",
+          "showInTitle": true,
+          "options": [
+            {
+              "label": "ES",
+              "value": "ES"
+            },
+            {
+              "label": "SP",
+              "value": "SP"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "order-config.modal#header": {
+    "children": [
+      "order-config.form"
+    ]
+  },
+  "order-config.title#header": {
+    "props": {
+      "formTitle": "Order Configuration for Header"
     }
   },
   "sticky-layout#4-desktop": {
